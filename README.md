@@ -1,19 +1,21 @@
 # GIT Symlins with and without LFS under Linux and Windows
 
-GIT _is_ able to handle [Symlinks](https://stackoverflow.com/questions/954560/how-does-git-handle-symbolic-links#answer-18791647).
+GIT _is_ able to handle [symlinks](https://stackoverflow.com/questions/954560/how-does-git-handle-symbolic-links#answer-18791647).
 
 There is also a popular [GIT for Windows](https://gitforwindows.org/) implementation.
 
-Unfortunately Windows does not support UNIX like Symlinks out of the box and GIT for Windows [does not support them by default](https://github.com/git-for-windows/git/wiki/Symbolic-Links).
+Unfortunately Windows does not support UNIX like symlinks out of the box and GIT for Windows [does not support them by default](https://github.com/git-for-windows/git/wiki/Symbolic-Links).
+
+### LFS
 
 To handle large binary files, GIT comes with [git-lfs](https://github.com/git-lfs/git-lfs/blob/main/README.md) to store those files differently.
 
-I accidentally tracked Symlinks as lfs-files and dod not notice it, as it simply worked fine.
+I accidentally tracked symlinks as lfs-files and did not notice it, as it simply worked fine.
 
-Using GIT for Windows, however, I noticed some inconsistency in handling Symlinks.
+Using GIT for Windows, however, I noticed some inconsistency in handling symlinks.
 Thus, I created this small sample repository with different kinds of Symlinks to track down the problem.
 
-### observations
+### Observations
 
 On my **Linux** system I created two directories containing symlinks to this README.md.
 The directory `lfs-files/**` was tracked as LFS while `plain-files` contains untracked symlinks.
